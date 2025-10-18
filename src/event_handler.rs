@@ -23,19 +23,14 @@ pub struct TermEventsHandler {
 
 impl TermEventsHandler {
     pub fn new() -> Self {
-        match env::consts::OS {
-            "windows" => {}
-            _ => {
-                execute!(
-                    stdout(),
-                    EnterAlternateScreen,
-                    cursor::Hide,
-                    Clear(ClearType::All)
-                )
-                .unwrap();
-                enable_raw_mode().unwrap();
-            }
-        }
+        execute!(
+            stdout(),
+            EnterAlternateScreen,
+            cursor::Hide,
+            Clear(ClearType::All)
+        )
+        .unwrap();
+        enable_raw_mode().unwrap();
 
         Self {
             pressed_timeout: [0; 8],
@@ -51,13 +46,8 @@ impl TermEventsHandler {
                 kind: KeyEventKind::Press,
                 ..
             }) => {
-                match env::consts::OS {
-                    "windows" => {}
-                    _ => {
-                        execute!(stdout(), LeaveAlternateScreen, cursor::Show).unwrap();
-                        disable_raw_mode().unwrap();
-                    }
-                }
+                execute!(stdout(), LeaveAlternateScreen, cursor::Show).unwrap();
+                disable_raw_mode().unwrap();
 
                 process::exit(0);
             }
