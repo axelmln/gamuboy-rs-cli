@@ -1,0 +1,16 @@
+[package]
+name = "gamuboy_rs_cli"
+version = "0.1.0"
+edition = "2021"
+authors = ["Axel Maulion"]
+description = "A GameBoy emulator running in the terminal"
+repository = "https://github.com/axelmln/gamuboy-rs-cli"
+homepage = "https://github.com/axelmln/gamuboy-rs-cli"
+keywords = ["emulator", "gameboy", "rust", "terminal", "cli"]
+categories = ["emulators", "games", "terminal", "cli"]
+readme = "README.md"
+
+[dependencies]
+gamuboy = { git = "https://github.com/axelmln/gamuboy-rs" }
+crossterm = "0.27"
+rodio = { version = "0.20.1"}
