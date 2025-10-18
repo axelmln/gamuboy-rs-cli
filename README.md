@@ -11,6 +11,7 @@ $ cd gamuboy-rs-cli
 $ cargo build --release
 ```  
 
+Run the emulator:  
 ```
 $ ./gamuboy /path/to/rom [--bootrom /path/to/bootrom]
 ```  
