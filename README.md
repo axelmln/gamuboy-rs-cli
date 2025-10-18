@@ -29,3 +29,4 @@ $ ./gamuboy /path/to/rom [--bootrom /path/to/bootrom]
 | D-Pad Down      | `Arrow Down`    |
 | D-Pad Left      | `Arrow Left`    |
 | D-Pad Right     | `Arrow Right`   |
+| Quit            | `q`             |
